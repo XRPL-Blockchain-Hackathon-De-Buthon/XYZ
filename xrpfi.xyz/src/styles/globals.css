@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+@theme {
+	/* 네온 포인트 색상 */
+	--color-neon-green: #39ff14;
+	--color-neon-blue: #00ffff;
+	--color-neon-purple: #9d00ff;
+	--color-neon-pink: #ff00ff;
+
+	/* 다크 테마 색상 */
+	--color-dark-background: #0a0a0a;
+	--color-dark-card: #121212;
+	--color-dark-border: #2a2a2a;
+	--color-dark-text: #e5e5e5;
+}
+
+:root {
+	--foreground-rgb: 229, 229, 229;
+	--background-start-rgb: 10, 10, 10;
+	--background-end-rgb: 0, 0, 0;
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+	min-height: 100vh;
+}
+
+@layer utilities {
+	* {
+		@apply border-dark-border;
+	}
+
+	.card {
+		@apply bg-dark-card rounded-lg border border-dark-border p-4 shadow-lg;
+	}
+
+	.btn {
+		@apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+	}
+
+	.btn-primary {
+		@apply bg-neon-purple hover:bg-neon-purple/80 text-black;
+	}
+
+	.btn-secondary {
+		@apply bg-dark-card hover:bg-dark-border text-white;
+	}
+}
